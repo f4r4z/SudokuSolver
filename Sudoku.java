@@ -36,14 +36,12 @@ public class Sudoku {
             return true;
         }
 
+        //checks for already existing numbers
         if(board[row][col] != 0) {
             if(check(row, col, board[row][col])) {
                 return nextPos(row, col);
             }
         }
-
-
-        int num = board[row][col];
 
         //checks each number from 1 to 9
         for(int i = 1; i < 10; i++) {
@@ -54,16 +52,11 @@ public class Sudoku {
                 if(nextPos(row, col)) {
                     return true;
                 }
-
-
-
             }
 
             //clears the previous positions
             board[row][col] = 0;
-
         }
-
 
         return false;
     }
