@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class SudokuExample {
     public static void main(String[] args) throws MalformedURLException {
 
-
-
         //World's hardest sudoku
         int[][] board = {
                 {8,0,0,0,0,0,0,0,0},
@@ -23,7 +21,6 @@ public class SudokuExample {
         };
 
         Sudoku test = new Sudoku(board);
-
         test.solve();
         test.print();
 
@@ -37,12 +34,9 @@ public class SudokuExample {
 
         try {
             Scanner scanner = new Scanner(file.openStream());
-
-
             while(scanner.hasNextLine()) {
 
                 s += scanner.nextLine() + "\n";
-
 
             }
 
@@ -62,10 +56,7 @@ public class SudokuExample {
             if(lines[i].contains("Grid")) {
                 for(int r = 0; r < sudoku96.length; r++) {
                     for(int c = 0; c < sudoku96[r].length; c++) {
-
                         sudoku96[r][c] = Character.getNumericValue(lines[i+ r + 1].charAt(c));
-
-
                     }
                 }
 
@@ -73,12 +64,12 @@ public class SudokuExample {
                 Sudoku sudokuSolver = new Sudoku(sudoku96);
                 sudokuSolver.solve();
                 sudoku96 = sudokuSolver.getBoard();
+
+                //adds the 3 top left digits
                 String digits = sudoku96[0][0] + "" + sudoku96[0][1] + "" + sudoku96[0][2];
                 sum += Integer.parseInt(digits);
 
             }
-
-
 
         }
 
