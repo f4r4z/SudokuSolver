@@ -4,7 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class SudokuClient {
+public class SudokuExample {
     public static void main(String[] args) throws MalformedURLException {
 
 
@@ -41,7 +41,7 @@ public class SudokuClient {
 
             while(scanner.hasNextLine()) {
 
-               s += scanner.nextLine() + "\n";
+                s += scanner.nextLine() + "\n";
 
 
             }
